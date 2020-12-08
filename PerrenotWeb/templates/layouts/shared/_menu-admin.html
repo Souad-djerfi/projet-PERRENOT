@@ -1,0 +1,174 @@
+<!--
+<div class="dropdown">
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tournées</a> 
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Ajouter des tournées</a>
+      <a class="dropdown-item" href="#">Récupérer tournées brouillon</a>
+      <a class="dropdown-item" href="#">Modifier tournées validées</a>
+    </div>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Visualisation données</a> 
+        <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Diagrammes</a>
+        <a class="dropdown-item" href="#">Rentabilité tournées</a>
+    </div>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Chauffeur</a> 
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Ajouter un chauffeur</a>
+      <a class="dropdown-item" href="#">Attribuer un statut à un chauffeur</a>
+      <a class="dropdown-item" href="#">Modifier un chauffeur</a>
+      <a class="dropdown-item" href="#">Supprimer un chauffeur</a>
+    </div>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Camion</a> 
+    
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Ajouter un camion</a>
+      <a class="dropdown-item" href="#">Modifier un camion</a>
+      <a class="dropdown-item" href="#">Supprimer un camion</a>
+    </div>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Magasin</a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Ajouter un magasin</a>
+      <a class="dropdown-item" href="#">Modifier un magasin</a>
+      <a class="dropdown-item" href="#">Supprimer un magasin</a>
+    </div>
+  </div> -->
+
+  <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{{ url_for('identification') }}">
+      <img src="{{url_for('static', filename='images/JP1.jpg')}}" width="100" height="45" class="d-inline-block align-top" alt="" loading="lazy">
+      PERRENOT
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tournée
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url_for('selection_magasins') }}">Nouvelles Tournées</a>
+            <a class="dropdown-item" href="#">Modifier Tournées</a>
+            <a class="dropdown-item" href="#">Reprendre Tournées Brouillon</a>
+            <a class="dropdown-item" href="#">Imprimer Les Feuilles de Route</a>
+            <a class="dropdown-item" href="#">Imprimer Les Facturations</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="{{ url_for('espace_chauf') }}" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Chauffeur
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url_for('espace_chauf') }}">Espace Chauffeur</a>
+            <a class="dropdown-item" href="{{ url_for('ajouter_chauf') }}">Ajouter Chauffeur</a>
+            <a class="dropdown-item" href="{{ url_for('ajouter_statut_chauf') }}">Ajouter Statut Chauffeur</a>
+            <a class="dropdown-item" href=" {{ url_for('modifier_chauffeur') }}">Modifier Chauffeur</a>            
+            <a class="dropdown-item" href=" {{ url_for('edit_staut_chauf') }}">Editer Statut Chauffeur</a>
+            <a class="dropdown-item" href="{{ url_for('modifier_chauffeur') }}">Supprimer Chauffeur</a>
+            <a class="dropdown-item" href="#">Liste Chauffeur</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Camion
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url_for('ajout_camion') }}">Ajouter Camion</a>
+            <a class="dropdown-item" href="#">Modifier Camion</a>
+            <a class="dropdown-item" href="#">Supprimer Camion</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Enseigne
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Ajouter Enseigne</a>
+            <a class="dropdown-item" href="#">Modifier Enseigne</a>
+            <a class="dropdown-item" href="#">Supprimer Enseigne</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Magasin   
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url_for('ajouter_magasin') }}">Ajouter Magasin</a>
+            <a class="dropdown-item" href="#">Modifier Magasin</a>
+            <a class="dropdown-item" href="#">Supprimer Magasin</a>
+          </div>
+        </li>
+        
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Visualisation des données
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{{ url_for('contact') }}">Diagrammes</a>
+            <a class="dropdown-item" href="#">Rentabilité Tournées</a>
+            
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Compte
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="#">Mon Compte</a>
+            <a class="dropdown-item" href="{{ url_for('ajouter_user') }}">Ajouter Compte</a>
+            <a class="dropdown-item" href="#">Supprimer Compte</a>
+            <a class="dropdown-item" href="{{ url_for('home') }}">Se Deconnecter</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#apropos">
+            A propos de...
+          </a>
+        </li>
+      </ul>
+      <!-- Modal -->
+      <div class="modal fade" id="apropos" tabindex="-1" aria-labelledby="apropos" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="apropos">A Propos De...</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <p> Perrenot-web </p>
+              <p> version 1.0 </p>...
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+      </form>
+    </div>
+  </nav>
+  
+
+  <br>
+  
+    {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+              {% for category, message in messages %}
+                  <div class="alert alert-{{ category }}" role="alert">
+                      {{ message }}
+                  </div>
+              {% endfor %}
+          {% endif %}
+    {% endwith %}

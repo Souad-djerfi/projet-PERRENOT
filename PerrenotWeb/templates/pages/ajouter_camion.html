@@ -1,0 +1,131 @@
+{% extends 'layouts/default.html' %}
+{% block body%}
+{% include 'layouts/shared/_menu-admin.html'%}
+<!--<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+---- Include the above in your HEAD tag ---------->
+<div class="container-fluid">  
+    <div class="row">
+        <div class="col-md-2">  
+            {% include 'layouts/shared/_menu_camion.html'%}
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-6">     
+            <div class="card">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <h5 class="card-header card text-center">  Ajouter un nouveau Camion:</h5>
+                    <div class="card-body">
+                        <div class="border border_secondary rounded-sm">
+                            <form ACTION="{{ url_for('ajout_camion') }}" name="ajout_camion" id="form" class="form-horizontal default" enctype="multipart/form-data" method="POST" >
+                            
+                                <div class="form-group">
+                                    <label for="immatriculation" class="col-form-label">Immatriculation:</label>
+                                    <input type="text" class="form-control" id="Immatriculation" name="immatriculation" value="" required>
+                                    <label for="capacite" class="col-form-label">Capacite:</label>
+                                    <input type="text" class="form-control" id="capacite" name="capacite" required><br>
+                                    <select name="liste_type" class="custom-select my-1 mr-sm-2" required>
+                                        <option value="" disabled selected>  Choisissez un Type</option>
+                                        <option value="PORTEUR" >  PORTEUR </option>
+                                        <option value="CAISSE_MOBILE" >  CAISSE_MOBILE </option>
+                                        <option value="LOCATION" >  LOCATION </option>
+                                        <option value="VL" >  VL </option>
+                                        <option value="TRACTEUR" >  TRACTEUR </option>
+                                        <option value="SEMI_REMORQUE" >  SEMI_REMORQUE </option>
+                                    </select>
+                                    <label for="tonnage" class="col-form-label">Tonnage:</label>
+                                    <input type="text" class="form-control" id="tonnage" name="tonnage"  value="0"><br>
+                                    <select name="liste_fonction" class="custom-select my-1 mr-sm-2" required>
+                                        <option value="" disabled selected>  Choisissez une fonction</option>
+                                        <option value="FRIGO" >  FRIGO </option>
+                                        <option value="BI_TEMP" >  BI_TEMP </option>
+                                        <option value="TRR" >  TRR </option>
+                                    </select>
+                                    <label for="assurance" class="col-form-label">Assurance:</label>
+                                    <input type="text" class="form-control" id="assurance" name= "assurance"  value="0">
+                                    <label for="loyer" class="col-form-label">Loyer:</label>
+                                    <input type="text" class="form-control" id="loyer" name= "loyer"  value="0">
+                                    <label for="entretient" class="col-form-label">Entretient:</label>
+                                    <input type="text" class="form-control" id="entretient" name= "entretient"  value="0">
+                                    <label for="pneu" class="col-form-label">Pneus:</label>
+                                    <input type="text" class="form-control" id="pneu" name= "pneu"  value="0">
+                                    <label for="consommation" class="col-form-label">Consommation:</label>
+                                    <input type="text" class="form-control" id="consommation" name= "consommation"  value="0">
+                                
+                                </div> 
+                                <div >
+                                    <button type="submit" href="#" class="btn btn-primary"> Ajouter</button> 
+                                    <button type="reset" class="btn btn-primary" > Annuler</button>                         
+                                </div>
+                                
+                                
+                            </form>     
+                        </div>      
+                    </div>                     
+            </div>  
+        </div>
+    </div>      
+</div>
+        <!--<div class="col-md-10">     
+            <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3"> 
+                <div class="panel panel-default" >
+                    <div class="panel-heading">
+                        <div class="panel-title text-center">Ajouter un nouveau camion</div>
+                    </div>     
+
+                    <div class="panel-body" >
+                        <div class="border border_secondary rounded-sm">
+                            <form ACTION="{{ url_for('ajout_camion') }}" name="ajout_camion" id="form" class="form-horizontal default" enctype="multipart/form-data" method="POST" >
+                            
+                                <div class="form-group">
+                                    <label for="immatriculation" class="col-form-label">Immatriculation:</label>
+                                    <input type="text" class="form-control" id="Immatriculation" name="immatriculation" value="" required>
+                                    <label for="capacite" class="col-form-label">Capacite:</label>
+                                    <input type="text" class="form-control" id="capacite" name="capacite" required><br>
+                                    <select name="liste_type" class="custom-select my-1 mr-sm-2" required>
+                                        <option value="" disabled selected>  Choisissez un Type</option>
+                                        <option value="PORTEUR" >  PORTEUR </option>
+                                        <option value="CAISSE_MOBILE" >  CAISSE_MOBILE </option>
+                                        <option value="LOCATION" >  LOCATION </option>
+                                        <option value="VL" >  VL </option>
+                                        <option value="TRACTEUR" >  TRACTEUR </option>
+                                        <option value="SEMI_REMORQUE" >  SEMI_REMORQUE </option>
+                                    </select>
+                                    <label for="tonnage" class="col-form-label">Tonnage:</label>
+                                    <input type="tonnage" class="form-control" id="tonnage" name="tonnage"  value="0"><br>
+                                    <select name="liste_fonction" class="custom-select my-1 mr-sm-2" required>
+                                        <option value="" disabled selected>  Choisissez une fonction</option>
+                                        <option value="FRIGO" >  FRIGO </option>
+                                        <option value="BI_TEMP" >  BI_TEMP </option>
+                                        <option value="TRR" >  TRR </option>
+                                    </select>
+                                    <label for="assurance" class="col-form-label">Assurance:</label>
+                                    <input type="number" class="form-control" id="assurance" name= "assurance"  value="0">
+                                    <label for="loyer" class="col-form-label">Loyer:</label>
+                                    <input type="number" class="form-control" id="loyer" name= "loyer"  value="0">
+                                    <label for="entretient" class="col-form-label">Entretient:</label>
+                                    <input type="number" class="form-control" id="entretient" name= "entretient"  value="0">
+                                    <label for="pneu" class="col-form-label">Pneu:</label>
+                                    <input type="number" class="form-control" id="pneu" name= "pneu"  value="0">
+                                    <label for="consommation" class="col-form-label">Consommation:</label>
+                                    <input type="number" class="form-control" id="consommation" name= "consommation"  value="0">
+                                
+                                </div> 
+                                <div >
+                                    <button type="submit" href="#" class="btn btn-primary"> Ajouter</button> 
+                                    <button type="reset" class="btn btn-primary" > Annuler</button>                         
+                                </div>
+                                
+                                
+                            </form>     
+                        </div>      
+
+                    </div>                     
+                </div>  
+            </div>
+        </div>  
+    </div>      
+</div>-->
+
+
+{% endblock%} 

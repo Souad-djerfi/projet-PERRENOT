@@ -1,0 +1,58 @@
+{% extends 'layouts/default.html' %}
+{% block body%}
+{% include 'layouts/shared/_menu-admin.html'%}
+<!---<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+--- Include the above in your HEAD tag ---------->
+<div class="container-fluid">  
+    <div class="row">
+        <div class="col-md-2">  
+            {% include 'layouts/shared/_menu-chauf.html'%}
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-6">     
+            <div class="card">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <h5 class="card-header card text-center">  Ajouter un nouveau Chauffeur:</h5>
+                    <div class="card-body">
+                        <div class="border border_secondary rounded-sm">
+                            <form ACTION="{{ url_for('ajouter_chauf') }}" name="ajout_util" id="form" class="form-horizontal default" enctype="multipart/form-data" method="POST" >
+                                <div class="form-group">
+                                    <label for="nom" class="col-form-label">Nom:</label>
+                                    <input type="text" class="form-control" id="nom" name="nom" value="" required>
+                                    <label for="prenom" class="col-form-label">Prenom:</label>
+                                    <input type="text" class="form-control" id="prenom" name="prenom" required><br>
+                                    <select name="liste_contrat" class="custom-select" required>
+                                        <option value="" disabled selected>  Choisissez un contrat</option>
+                                        {% for ctr in liste_contrat %}
+                                            <option value="{{ ctr[0] }}" >  {{ ctr[1] }} </option>
+                                        {% endfor %}
+                                    </select>
+                                    <label for ="date_deb" class="col-form-label">Date debut du contrat:</label>  
+                                    <input type="date" id="date_deb"  name='date_D' class="form-control"required>
+                                    <label for ="date_fin" class="col-form-label" > Date fin du contrat:</label>  
+                                    <input type="date" id="date_fin"  name='date_fin' class="form-control">
+                                    <label for="horaire" class="col-form-label">Coût Horaire:</label>
+                                    <input type="number" class="form-control" id="horaire" name="horaire" value="0" >
+                                    <label for="horaire" class="col-form-label">Panier Matin:</label>
+                                    <input type="number" class="form-control" id="panier1" name="panier1" placeholder=" panier matin" value="0">
+                                    <label for="horaire" class="col-form-label">Panier Midi:</label>
+                                    <input type="number" class="form-control" id="panier2" name= "panier2" placeholder=" panier midi" value="0">
+                                    <label for="panier3" class="col-form-label">Panier Soir:</label>
+                                    <input type="number" class="form-control" id="panier3" name= "panier3" placeholder=" panier soir" value="0">
+                                </div> 
+                                <div >
+                                    <button type="submit" href="#" class="btn btn-primary"> Ajouter</button> 
+                                    <button type="reset" class="btn btn-primary" > Annuler</button>                         
+                                </div>
+                            </form>     
+                        </div>      
+                    </div>                     
+            </div>  
+        </div>
+    </div>      
+</div>
+
+
+{% endblock%} 

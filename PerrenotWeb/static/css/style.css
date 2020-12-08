@@ -1,0 +1,294 @@
+.red {
+    height: 500px;
+    background-color: red;
+}
+
+
+form.default {
+  
+    /* Uniquement centrer le formulaire sur la page */
+    margin: 0 auto;
+    width: 400px;
+    /* Encadré pour voir les limites du formulaire */
+    padding: 1em;
+    /* border: 1px solid #CCC;
+    border-radius: 1em;*/
+  }
+
+form.overflow-x-scroll{
+  overflow-x: scroll;
+}
+
+input#upload_excel{
+  display: none;
+}
+
+.upload_excel_label{
+  cursor: pointer;
+}
+
+body {
+    background-color: white;
+}
+
+#loginbox {
+    margin-top: 30px;
+}
+
+#loginbox > div:first-child {        
+    padding-bottom: 10px;    
+}
+
+.iconmelon {
+    display: block;
+    margin: auto;
+}
+
+#form > div {
+    margin-bottom: 25px;
+}
+
+#form > div:last-child {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.panel {    
+    background-color: transparent;
+}
+
+.panel-body {
+    padding-top: 30px;
+    background-color: rgba(2555,255,255,.3);
+}
+
+#particles {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    top: 0;                        
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: -2;
+}
+
+.iconmelon,
+.im {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: block;
+  fill: #525151;
+}
+
+.iconmelon:after,
+.im:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+  caption {
+    padding: 10px;
+  }
+
+  .two-col {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+  }  
+  
+  #code_mag_ul {
+    
+    list-style-type:none 
+
+  }
+  #code_mag_ul > li:hover{
+    cursor: pointer;
+  }
+  .lists {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  
+  .lists .list {
+    display: flex;
+    flex-flow: column;
+    flex: 2;
+  
+    /*width: 0%;
+    min-width: 250px;
+    max-width: 350px;
+    height: 100%;*/
+    min-height: 150px;
+  
+    background-color: rgba(0, 0, 0, 0.1);
+    /*margin: 0 2px;*/
+    padding: 8px;
+    transition: all 0.2s linear;
+  }
+  
+  .lists .list .list-item {
+    background-color: #F3F3F3;
+    border-radius: 2px;
+    padding: 4px 5px;
+    text-align: center;
+    margin: 4px 0px;
+  }
+
+  
+  @media (min-width: 768px){
+    .affix-content .container {
+      width: 700px;
+    }   
+  
+    html,body{
+      background-color: white;
+      height: 100%;
+     
+    }
+      .affix-content .container .page-header{
+      margin-top: 0;
+    }
+    .sidebar-nav{
+          position:fixed; 
+          width:100%;
+    }
+    .affix-sidebar{
+      padding-right:0; 
+      font-size:small;
+      padding-left: 0;
+    }  
+    .affix-row, .affix-container, .affix-content{
+      height: 100%;
+      margin-left: 0;
+      margin-right: 0;    
+    } 
+    .affix-content{
+      background-color:white; 
+    } 
+    .sidebar-nav .navbar .navbar-collapse {
+      padding: 0;
+      max-height: none;
+    }
+    .sidebar-nav .navbar{
+      border-radius:0; 
+      margin-bottom:0; 
+      border:0;
+    }
+    .sidebar-nav .navbar ul {
+      float: none;
+      display: block;
+    }
+    .sidebar-nav .navbar li {
+      float: none;
+      display: block;
+    }
+    .sidebar-nav .navbar li a {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }  
+  }
+  
+  @media (min-width: 769px){
+    .affix-content .container {
+      width: 600px;
+    }
+      .affix-content .container .page-header{
+      margin-top: 0;
+    }  
+  }
+  
+  @media (min-width: 992px){
+    .affix-content .container {
+    width: 900px;
+    }
+      .affix-content .container .page-header{
+      margin-top: 0;
+    }
+  }
+  
+  @media (min-width: 1220px){
+    .affix-row{
+      overflow: hidden;
+    }
+  
+    .affix-content{
+      overflow: auto;
+    }
+  
+    .affix-content .container {
+      width: 1000px;
+    }
+  
+    .affix-content .container .page-header{
+      margin-top: 0;
+    }
+    .affix-content{
+      padding-right: 30px;
+      padding-left: 30px;
+    }  
+    .affix-title{
+      border-bottom: 1px solid #ecf0f1; 
+      padding-bottom:10px;
+    }
+    .navbar-nav {
+      margin: 0;
+    }
+    .navbar-collapse{
+      padding: 0;
+    }
+    .sidebar-nav .navbar li a:hover {
+      background-color: #428bca;
+      color: white;
+    }
+    .sidebar-nav .navbar li a > .caret {
+      margin-top: 8px;
+    }  
+  }
+  
+  /* The sidebar menu */
+.sidenav {
+  /*height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 220px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 35%; /* Stay at the top */
+  left: 0;
+  background-color: rgb(245, 245, 248); /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding: 20px 0 20px 0;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #c7d8f0;
+}
+
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 700px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}

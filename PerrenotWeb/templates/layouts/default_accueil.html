@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head> 
+        <meta charset="UTF-8">
+        <title>PERRENOT</title>
+        <link rel="shortcut icon" href="{{url_for('static', filename='images/JP4.ico.jpg')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>   
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.5.3/umd/popper.min.js" integrity="sha512-53CQcu9ciJDlqhK7UD8dZZ+TF2PFGZrOngEYM/8qucuQba+a+BXOIRsp9PoMNJI3ZeLMVNIxIfZLbG/CdHI5PA==" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    
+    </head>
+    <body>
+        
+        
+        <!--{% include 'layouts/shared/_nav.html'%}--> 
+
+        <div class="container-fluid ">
+            <div class="container">
+                <div classe="row">
+                   <!-- <div class="col-md-4"> 
+                        <img src="{{url_for('static', filename='images/JP1.jpg')}}"  >
+                    </div>
+                    <div class="col-md-8">
+                         <h3  color ="#00ff00"> </br> </br> NOTRE CHAUFFEUR C'EST LE MEILLEUR</h3>
+                    </div>-->
+                    <div class="col-md-12">
+
+                        <div class="d-block w-100 text-center">
+                            <img src="{{url_for('static', filename='images/JP1.jpg')}}"  >
+                            <h3 class="m-0 text-secondary">NOTRE CHAUFFEUR C'EST LE MEILLEUR</h3>
+                        </div>
+
+                    </div>   
+                    
+                </div>
+
+            </div>
+            
+        </div>
+        
+        
+        
+        {% block body %} 
+        
+        {% endblock %}
+        
+        </body>
+</html>

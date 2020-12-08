@@ -1,0 +1,75 @@
+{% extends 'layouts/default.html' %}
+{% block body%}
+{% include 'layouts/shared/_menu-admin.html'%}
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container">    
+        
+    <div id="loginbox" class="mainbox col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3"> 
+        
+        <div class="row">                
+            <!--<div class="iconmelon">
+              <svg viewBox="0 0 32 32">
+                
+              </svg>
+            </div>-->
+        </div>
+        
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+                <div class="panel-title text-center">Ajouter un nouvel utilisateur</div>
+            </div>     
+
+            <div class="panel-body" >
+                <div class="border border_secondary rounded-sm">
+                    <form ACTION="{{ url_for('ajouter_user') }}" name="ajout_util" id="form" class="form-horizontal default" enctype="multipart/form-data" method="POST" >
+                    
+                        <div class="input-group">
+                        
+                            <select name="liste_roles" required>
+                                <option value="" disabled selected>  Choisissez un Rôle</option>
+                                {% for i in range(nbre_role) %}
+                                    <option value="{{role[i][0]}}">  {{role[i][1]}} </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for ="user">Pseudo:</label>
+                            <input id="user" type="text" class="form-control" name="pseudo" value="{{pseudo}}" required >                                        
+                        </div>
+
+                        <div class="input-group">
+                            <label for ="nom">Nom:</label>
+                            <input id="nom" type="text" class="form-control" name="nom" value="{{nom}}" required >                                        
+                        </div>    
+                        <div class="input-group">
+                            <label for ="prenom">Prénom:</label>
+                            <input id="prenom" type="text" class="form-control" name="prenom" value="{{prenom}}" required >                                        
+                        </div>                                                              
+                        <div class="input-group">
+                            <label for ="mdp">Mot de passe:</label>
+                            <input id="mdp" type="password" class="form-control" name="mdp" value="{{mdp}}" required>                                        
+                        </div>  
+                        <div class="input-group">
+                            <label for ="Conmdp">Confirmer mot de passe:</label>
+                            <input id="Conmdp" type="password" class="form-control" name="Cmdp" value="{{Cmdp}}" required >                                        
+                        </div>   
+                        
+                        <div >
+                            <button type="submit" href="#" class="btn btn-primary"> Ajouter</button> 
+                            <button type="reset" class="btn btn-primary" > Annuler</button>                         
+                        </div>
+                    </form>     
+                </div>      
+
+            </div>                     
+        </div>  
+    </div>
+</div>
+
+
+{% endblock%} 

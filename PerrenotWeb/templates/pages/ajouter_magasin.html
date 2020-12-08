@@ -1,0 +1,108 @@
+{% extends 'layouts/default.html' %}
+{% block body%}
+{% include 'layouts/shared/_menu-admin.html'%}
+<!-----<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+- Include the above in your HEAD tag ---------->
+<!--<div class="container-fluid">  
+    <div class="row">
+        <div class="col-md-2">  
+            {% include 'layouts/shared/_menu-chauf.html'%}
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-6">     
+            <div class="card">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <h5 class="card-header card text-center">  Ajouter un nouveau Chauffeur:</h5>
+                    <div class="card-body">
+                        <div class="border border_secondary rounded-sm">
+                            <form ACTION="{{ url_for('ajouter_magasin') }}" name="ajout_mag" id="form" class="form-horizontal default" enctype="multipart/form-data" method="POST" >
+                                <div class="input-group">
+                                    <select name="liste_ens" required>
+                                       <option value="" disabled selected>  Choisissez une enseigne</option>
+                                            {% for i in range(nbre_ens) %}
+                                                {% if enseigne[i][0]==enseigneS: %}
+                                                    <label> bonjour {{ enseigneS }}</label>
+                                                    <option value="{{enseigne[i][0]}}" selected>  {{enseigne[i][1]}} </option>
+                                                {% else: %}
+                                                    <option value="{{enseigne[i][0]}}">  {{enseigne[i][1]}} </option>
+                                                {% endif %}    
+                                            {% endfor %}
+                                    </select>
+                                   <B><label for ="code">Code Magasin:</label> </B>
+                                    <input id="code" type="text" class="form-control" name="code" value="{{code}}" required >                                        
+                                    <label for ="adresse" class="col-form-label">Adresse du magasin:</label>
+                                    <input id="adresse" type="text" class="form-control" name="adresse" value="{{adresse}}" required >                                        
+                                    <label for ="heure" class="col-form-label">Heure de livraison du magasin:</label>
+                                    <input id="heure" type="time" class="form-control" name="heure" value="{{heure}}" required >                                        
+                                    <label for ="rolls" class="col-form-label">tarif Rolls:</label>
+                                    <input id="rolls" type="number" class="form-control" name="rolls" value="{{rolls}}" >                                        
+                                    <label for ="pallete" class="col-form-label">tarif Palette:</label>
+                                    <input id="pallete" type="number" class="form-control" name="palette" value="{{palette}}" >   
+                                    <label for ="boxe" class="col-form-label">tarif boxe:</label>
+                                    <input id="box" type="number" class="form-control" name="boxe" value="{{boxe}}" >     
+                                                                     
+                                </div>    
+                                <div >
+                                    <button type="submit" href="#" class="btn btn-primary"> Ajouter</button> 
+                                    <button type="reset" class="btn btn-primary" > Annuler</button>                         
+                                </div>
+                            </form> 
+                        </div>
+                    </div>  
+                </div> 
+            </div>   
+        </div>      
+    </div>
+</div>-->
+
+<div class="container-fluid">  
+    <div class="row">
+        <div class="col-md-2">  
+            {% include 'layouts/shared/_menu_magasin.html'%}
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-6">     
+            <div class="card">
+                <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                <h5 class="card-header card text-center">  Ajouter un nouveau Magasin:</h5>
+                    <div class="card-body">
+                        <div class="border border_secondary rounded-sm">
+                            <form ACTION="{{ url_for('ajouter_magasin') }}" name="ajout_util" id="form" class="form-horizontal default" enctype="multipart/form-data" method="POST" >
+                                <div class="form-group">
+                                    <select name="liste_ens" class="custom-select my-1 mr-sm-2" required>
+                                        <option value="" disabled selected>  Choisissez une enseigne</option>
+                                            {% for i in range(nbre_ens) %}
+                                                <option value="{{enseigne[i][0]}}">  {{enseigne[i][1]}} </option>
+                                            {% endfor %}
+                                     </select>
+                                    <label for ="code">Code Magasin:</label> </B>
+                                    <input id="code" type="text" class="form-control" name="code" value="{{code}}" required >                                        
+                                    <label for ="adresse" class="col-form-label">Adresse du magasin:</label>
+                                    <input id="adresse" type="text" class="form-control" name="adresse" value="{{adresse}}" required >                                        
+                                    <label for ="heure" class="col-form-label">Heure de livraison du magasin:</label>
+                                    <input id="heure" type="time" class="form-control" name="heure" value="{{heure}}" required >                                        
+                                    <label for ="rolls" class="col-form-label">tarif Rolls:</label>
+                                    <input id="rolls" type="number" class="form-control" name="rolls" value="{{rolls}}" >                                        
+                                    <label for ="pallete" class="col-form-label">tarif Palette:</label>
+                                    <input id="pallete" type="number" class="form-control" name="palette" value="{{palette}}" >   
+                                    <label for ="boxe" class="col-form-label">tarif boxe:</label>
+                                    <input id="box" type="number" class="form-control" name="boxe" value="{{boxe}}" >   
+                                </div> 
+                                <div >
+                                    <button type="submit" href="#" class="btn btn-primary"> Ajouter</button> 
+                                    <button type="reset" class="btn btn-primary" > Annuler</button>                         
+                                </div>
+                            </form>     
+                        </div>      
+                    </div>                     
+            </div>  
+        </div>
+    </div>      
+</div>
+
+
+
+
+{% endblock%} 
